@@ -1,5 +1,5 @@
 class EventHub {
-  callstack = {}
+  private callstack = {}
   on(eventname, fn) {
     this.callstack[eventname] = this.callstack[eventname] || []
     this.callstack[eventname].push(fn)
