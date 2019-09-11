@@ -2,7 +2,7 @@ import EventHub from '../index'
 
 
 // 测试 eventhub 是否正确生成
-const testEventHub = (message) => {
+const testEventHub = (message: string) => {
   const eventhub = new EventHub()
   console.assert(eventhub instanceof Object === true, 'eventhub 应该是一个 object')
   console.log(message)
@@ -10,7 +10,7 @@ const testEventHub = (message) => {
 
 
 // 测试 on 和 emit
-const testOnAndEmit = (message) => {
+const testOnAndEmit = (message: string) => {
   const eventhub = new EventHub()
   let called = false
   eventhub.on('test-on-emit', () => {
@@ -23,7 +23,7 @@ const testOnAndEmit = (message) => {
 
 
 // 测试数据传递
-const testDataTransmission = (message) => {
+const testDataTransmission = (message: string) => {
   const eventhub = new EventHub()
   let testdata = 0
   eventhub.on('test-data', (data) => {
@@ -36,7 +36,7 @@ const testDataTransmission = (message) => {
 
 
 // 测试 off
-const testOff = (message) => {
+const testOff = (message: string) => {
   const eventhub = new EventHub()
   let called = false
   let fn1 = () => {
