@@ -22,3 +22,14 @@ eventhub.on('test-data', (data) => {
 })
 eventhub.emit('test-data', 100)
 console.assert(testdata === 100, 'testdata 应该等于 100')
+
+
+// 测试 off
+let testoff = 0
+let fn1 = () => {
+  testoff = 100
+}
+eventhub.on('test-off', fn1)
+eventhub.off('test-off', fn1)
+eventhub.emit('test-off')
+console.assert(testoff === 0, 'testoff 应该等于 0')
